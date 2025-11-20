@@ -1,110 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linha do Tempo: Novo Centro de Maringá</title>
-    <link rel="stylesheet" href="styles.css"> </head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Problemas e Soluções — Novo Centro de Maringá</title>
+  <style>
+    :root{
+      --accent:#2f6b5a;
+      --muted:#6b6b6b;
+      --bg:#fafafa;
+      --card:#ffffff;
+      --maxw:1100px;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#222;
+    }
+    body{background:var(--bg); margin:0; padding:32px 16px; display:flex; justify-content:center;}
+    .wrap{max-width:var(--maxw); width:100%;}
+    header{background:linear-gradient(90deg, rgba(47,107,90,0.06), rgba(47,107,90,0.02)); padding:28px; border-left:6px solid var(--accent); margin-bottom:18px;}
+    header h1{margin:0; font-size:28px; letter-spacing:0.2px;}
+    header p{margin:8px 0 0; color:var(--muted);}
+    .grid{display:grid; grid-template-columns: 1fr; gap:18px;}
+    @media(min-width:900px){ .grid{ grid-template-columns: 1fr 350px; } }
+    .card{background:var(--card); padding:18px; border-radius:8px; box-shadow:0 6px 18px rgba(15,15,15,0.04);}
+    .section-title{font-weight:600; color:var(--accent); margin-bottom:8px;}
+    .problem{display:flex; gap:12px; margin-bottom:14px;}
+    .problem .dot{width:10px;height:10px;border-radius:50%; background:var(--accent); margin-top:6px;}
+    .solutions ul{margin:8px 0 0 18px;}
+    .img-placeholder{width:100%;height:160px;border-radius:6px;background:linear-gradient(90deg,#eee,#f7f7f7);display:flex;align-items:center;justify-content:center;color:#aaa;font-size:15px;margin-bottom:10px;border:1px dashed #e0e0e0;}
+    footer{margin-top:16px; color:var(--muted); font-size:13px; text-align:center;}
+    .meta{font-size:13px;color:var(--muted); margin-top:6px;}
+    .kpi{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px;}
+    .kpi div{background:#f3f7f4;padding:8px 10px;border-radius:6px; font-weight:600; color:#2f6b5a;}
+    .btn{display:inline-block;background:var(--accent); color:#fff;padding:10px 14px;border-radius:6px;text-decoration:none;margin-top:6px;}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    @media(max-width:520px){ .two-col{grid-template-columns:1fr} }
+  </style>
+</head>
 <body>
-
-    <header class="timeline-header">
-        <h1>Linha do Tempo: Transformações Espaciais e Urbanas de Maringá (Novo Centro)</h1>
-        <p>Fotos antigas x atuais; Dados históricos relevantes sobre a área central de Maringá, PR.</p>
+  <div class="wrap">
+    <header>
+      <h1>Problemas e Soluções — Novo Centro de Maringá (Glebas A, B e C)</h1>
+      <p>A região em estudo integra a Zona Especial de Interesse Urbanístico delimitada por Av. São Paulo, Av. Tamandaré, Av. Paraná e Av. João Paulino Filho — usos residenciais e comércio/serviços. Esta página resume desafios urbanos e propostas de intervenção.</p>
     </header>
 
-    <div class="timeline">
+    <div class="grid">
+      <!-- main column -->
+      <main class="card">
+        <section>
+          <h2 class="section-title">Diagnóstico resumido</h2>
 
-        <div class="timeline-item left">
-            <div class="timeline-point">1940–1950</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Implantação da Linha Férrea 🚂 [cite: 2]</h2>
-                [cite_start]<p>O trem de passageiros chegou a Maringá em 1954[cite: 3], marcando a importância da ferrovia para o desenvolvimento. [cite_start]A estação, fotografada em sua fase final de construção em 1955 [cite: 4][cite_start], recebia regularmente os trens da R.V.P.S.C. [cite: 4] O centro da cidade se consolidava em torno deste eixo de transporte vital.</p>
-                <div class="image-placeholder">
-                    [cite_start][Image of: Estação ferroviária de Maringá na chegada do primeiro trem de passageiros em 1954] [cite: 4]<br>
-                    [cite_start][Image of: Estação ferroviária de Maringá em 1955] [cite: 4]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Ilhas de calor</strong>
+              <p class="meta">Superfícies impermeáveis, pouca arborização e verticalização aumentam temperaturas locais.</p>
             </div>
-        </div>
+          </div>
 
-        <div class="timeline-item right">
-            <div class="timeline-point">1960</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Viaduto e Terminal Multimodal 🏗️ [cite: 5]</h2>
-                <p>A década de 1960 viu a construção do Viaduto do Café na Av. [cite_start]São Paulo, uma passagem subterrânea crucial[cite: 5, 6]. [cite_start]A Estação Ferroviária e o Terminal Multimodal [cite: 6] funcionavam como pontos centrais de logística. [cite_start]O viaduto foi um esforço para gerenciar o tráfego da rodovia perimetral crescente[cite: 7].</p>
-                <div class="image-placeholder">
-                    [cite_start][Image of: Estação ferroviária de Maringá na década de 1960] [cite: 6]<br>
-                    [cite_start][Image of: Obras do viaduto do Café na década de 1960] [cite: 6]<br>
-                    [cite_start][Image of: Terminal Multimodal - Década de 1960] [cite: 6]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Percolação reduzida e impermeabilização</strong>
+              <p class="meta">Substituição de áreas permeáveis por pavimento reduz recarga do lençol e aumenta escoamento.</p>
             </div>
-        </div>
+          </div>
 
-        <div class="timeline-item left">
-            <div class="timeline-point">1970</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Consolidação da Perimetral 🚗 [cite: 7]</h2>
-                [cite_start]<p>O início dos anos 70 mostrou a consolidação do Viaduto do Café [cite: 8] [cite_start]e o aumento contínuo do fluxo de veículos [cite: 7] [cite_start]na Avenida São Paulo, refletindo a crescente urbanização e a importância da rodovia perimetral para a cidade[cite: 7].</p>
-                <div class="image-placeholder">
-                    [cite_start][Image of: Vista aérea do Viaduto do Café no início da década de 1970] [cite: 8]<br>
-                    [Image of: Viaduto do Café. [cite_start]Sem data] [cite: 8]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Drenagem insuficiente / alagamentos</strong>
+              <p class="meta">Infraestrutura muitas vezes subdimensionada e entupimento por resíduos.</p>
             </div>
-        </div>
+          </div>
 
-        <div class="timeline-item right">
-            <div class="timeline-point">1980</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Início da Desativação da Ferrovia 🛤️ [cite: 9]</h2>
-                [cite_start]<p>Com a redução na demanda, iniciou-se a desativação da linha férrea[cite: 10]. [cite_start]Grandes áreas antes ocupadas pela ferrovia [cite: 12] [cite_start]ficaram disponíveis [cite: 11][cite_start], o que favoreceu o planejamento e a reestruturação urbana do centro de Maringá[cite: 11].</p>
-                <div class="image-placeholder">
-                    [cite_start][Image of: Pátio de manobras e estação ferroviária na década de 1980] [cite: 12]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Redução de vegetação e perda de serviços ecossistêmicos</strong>
+              <p class="meta">Menos sombra, menos filtração de poluentes e menor qualidade de vida.</p>
             </div>
-        </div>
+          </div>
 
-        <div class="timeline-item left">
-            <div class="timeline-point">1990</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Rebaixamento e Projetos Urbanos 🏙️ [cite: 13]</h2>
-                [cite_start]<p>Os anos 90 foram de intensas discussões sobre a remoção dos trilhos[cite: 13]. [cite_start]O Projeto Ágora, de Oscar Niemeyer, foi apresentado em 1991[cite: 19]. [cite_start]Com a demolição da Estação e da Vila dos Ferroviários [cite: 19][cite_start], e o início do rebaixamento em 1995 [cite: 16, 19][cite_start], terrenos ferroviários foram incorporados [cite: 14][cite_start], atraindo edifícios [cite: 15] [cite_start]e diversificando os usos[cite: 18].</p>
-                <div class="image-placeholder">
-                    [cite_start][Image of: Vila dos Ferroviários em abril de 1991] [cite: 19]<br>
-                    [cite_start][Image of: Oscar Niemeyer na apresentação do Projeto Ágora em setembro de 1991] [cite: 19]<br>
-                    [cite_start][Image of: Início das obras de rebaixamento da linha férrea em 23 de junho de 1995] [cite: 19]<br>
-                    [cite_start][Image of: Inauguração do túnel ferroviário em dezembro de 1999] [cite: 19]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Contaminação do ar e passageiros por tráfego</strong>
+              <p class="meta">Elevado tráfego e veículos concentrados em eixos geram poluentes locais.</p>
             </div>
-        </div>
+          </div>
 
-        <div class="timeline-item right">
-            <div class="timeline-point">2000–2010</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Transformação Acelerada 🚧 [cite: 20]</h2>
-                [cite_start]<p>Os anos 2000 marcaram a transformação acelerada da área liberada[cite: 21]. [cite_start]Fotos de 2001 [cite: 22] [cite_start]mostram avenidas como a Horácio Raccanello Filho, ainda vazias [cite: 22] [cite_start]ou com a circulação de carroças[cite: 22]. [cite_start]Nos anos seguintes, essas vias se tornaram eixos de grande fluxo e foram rapidamente preenchidas por novas edificações[cite: 22].</p>
-                <div class="image-placeholder">
-                    [Image of: Av. [cite_start]Horácio Raccanello Filho sem edificações em 2001] [cite: 22]<br>
-                    [Image of: Av. [cite_start]João Paulino Vieira Filho em 2001] [cite: 22]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Passivos ambientais / contaminação do solo</strong>
+              <p class="meta">Legado ferroviário pode trazer óleos e contaminantes associáveis a uso anterior.</p>
             </div>
-        </div>
+          </div>
 
-        <div class="timeline-item left">
-            <div class="timeline-point">2020+</div>
-            <div class="timeline-content">
-                [cite_start]<h2>Formação do Novo Centro ✨ [cite: 23]</h2>
-                [cite_start]<p>O Novo Centro se consolidou como um moderno eixo estruturante de Maringá[cite: 23]. [cite_start]A área, antes ferroviária, agora concentra comércio, serviços, novas opções de mobilidade e paisagismo[cite: 23]. [cite_start]O destaque é o novo Terminal Urbano [cite: 24] [cite_start]e a paisagem urbana de prédios altos, como mostram as fotos de 2017 a 2020[cite: 24].</p>
-                <div class="image-placeholder">
-                    [cite_start][Image of: Sequência de fotos aéreas do Terminal Urbano (2017 a 2020)] [cite: 24]<br>
-                    [cite_start][Image of: Vista aérea atual do Terminal Urbano e Novo Centro] [cite: 24]
-                </div>
+          <div class="problem">
+            <div class="dot"></div>
+            <div>
+              <strong>Impactos socioespaciais (gentrificação)</strong>
+              <p class="meta">Valorização e deslocamento de população vulnerável.</p>
             </div>
-        </div>
+          </div>
+        </section>
 
+        <section style="margin-top:14px;">
+          <h2 class="section-title">Soluções práticas recomendadas</h2>
+
+          <div class="two-col">
+            <div>
+              <h3 style="margin:6px 0 6px;">Natureza & Água</h3>
+              <ul>
+                <li>Proteção e ampliação da arborização com espécies nativas.</li>
+                <li>Telhados e fachadas verdes em empreendimentos públicos/privados.</li>
+                <li>Biorretenção, bioswales e jardins de infiltração em vias e praças.</li>
+                <li>Pavimentos permeáveis em calçadas e estacionamentos.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="margin:6px 0 6px;">Mobilidade & Emissões</h3>
+              <ul>
+                <li>Priorização do transporte coletivo e modos ativos (ciclovias, calçadas) nas avenidas perimetrais.</li>
+                <li>Política de áreas de baixa emissão e restrição de pesados em horários críticos.</li>
+                <li>Reorganização do tráfego local para reduzir atravessamento e melhorar fluxo.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="two-col" style="margin-top:12px;">
+            <div>
+              <h3 style="margin:6px 0 6px;">Solo & Remediação</h3>
+              <ul>
+                <li>Levantamento de passivos e análises de solo/água nas Glebas A/B/C.</li>
+                <li>Remediação (bioremediação, escavação controlada) antes de novos projetos.</li>
+                <li>Certificação ambiental prévia para vendas e obras.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="margin:6px 0 6px;">Políticas & Inclusão</h3>
+              <ul>
+                <li>Instrumentos de zoneamento que exijam áreas permeáveis e moradia social.</li>
+                <li>Projetos participativos com comunidade local para definir usos.</li>
+                <li>Incentivos econômicos (IPTU verde, financiamento) para medidas sustentáveis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p style="margin-top:12px;">As ações devem ser combinadas: intervenções físicas (infraestrutura verde e drenagem), regulação (zoneamento, exigências técnicas) e governança (monitoramento, manutenção e participação). </p>
+        </section>
+
+        <section style="margin-top:12px;">
+          <h2 class="section-title">Plano rápido de implementação (prioridades)</h2>
+          <ol>
+            <li><strong>Diagnóstico</strong> (0–6 meses): mapeamento de pontos críticos, inventário arbóreo e testes de solo.</li>
+            <li><strong>Ações rápidas</strong> (6–18 meses): limpeza de rede pluvial, plantios estratégicos e cisternas públicas.</li>
+            <li><strong>Projetos estratégicos</strong> (1–3 anos): bioswales, telhados verdes, calçadas permeáveis.</li>
+            <li><strong>Intervenções</strong> (3–6 anos): remediação de solo, grandes parques e reordenação viária.</li>
+            <li><strong>Monitoramento</strong> contínuo e ajuste de políticas.</li>
+          </ol>
+        </section>
+
+        <section style="margin-top:12px;">
+          <h2 class="section-title">Indicadores sugeridos</h2>
+          <div class="kpi">
+            <div>Cobertura arbórea (%)</div>
+            <div>% área permeável</div>
+            <div>Eventos de alagamento/ano</div>
+            <div>PM2.5 médio anual</div>
+          </div>
+        </section>
+
+        <section style="margin-top:12px;">
+          <h2 class="section-title">Recursos e parcerias possíveis</h2>
+          <p class="meta">Prefeitura (planejamento/obras), universidades (UEM — estudos e monitoramento), empresas privadas (projetos e incentivos), sociedade civil (participação). Financiamentos via bancos de desenvolvimento e editais de clima/urbanismo.</p>
+        </section>
+      </main>
+
+      <!-- right column -->
+      <aside class="card">
+        <h3 class="section-title">Imagens / Materiais</h3>
+        <div class="img-placeholder">Imagem histórica: Estação / ferrovia (inserir arquivo)</div>
+        <div class="img-placeholder">Imagem atual: Av. São Paulo / verticalização</div>
+        <div class="img-placeholder">Mapa das Glebas A, B e C (inserir)</div>
+
+        <h3 class="section-title" style="margin-top:12px;">Documentos</h3>
+        <p class="meta">Linha do tempo histórica e material de apoio:</p>
+        <p><a href="file:///mnt/data/2.docx" class="btn" download>Baixar documento (2.docx)</a></p>
+
+        <h3 class="section-title" style="margin-top:12px;">Contato / Ação</h3>
+        <p class="meta">Se desejar, posso:</p>
+        <ul>
+          <li>Gerar um PDF técnico com plano de ação.</li>
+          <li>Montar apresentação para banca / defesa.</li>
+          <li>Produzir mapas e infográficos com dados específicos.</li>
+        </ul>
+      </aside>
     </div>
 
-    <footer class="timeline-footer">
-        <p>Exposição de Mestrado | [Seu Nome] | [Sua Instituição] | [Ano]</p>
+    <footer>
+      <div>Resumo elaborado com base em diagnóstico técnico geral aplicado ao contexto do Novo Centro de Maringá. Ferramenta: ChatGPT.</div>
+      <div style="margin-top:6px;"><small>Observação: atualizações locais e levantamentos de campo são recomendados para calibrar intervenções.</small></div>
     </footer>
 
+  </div>
 </body>
 </html>
