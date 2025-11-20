@@ -1,209 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Problemas e Soluções — Novo Centro de Maringá</title>
-  <style>
-    :root{
-      --accent:#2f6b5a;
-      --muted:#6b6b6b;
-      --bg:#fafafa;
-      --card:#ffffff;
-      --maxw:1100px;
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      color:#222;
-    }
-    body{background:var(--bg); margin:0; padding:32px 16px; display:flex; justify-content:center;}
-    .wrap{max-width:var(--maxw); width:100%;}
-    header{background:linear-gradient(90deg, rgba(47,107,90,0.06), rgba(47,107,90,0.02)); padding:28px; border-left:6px solid var(--accent); margin-bottom:18px;}
-    header h1{margin:0; font-size:28px; letter-spacing:0.2px;}
-    header p{margin:8px 0 0; color:var(--muted);}
-    .grid{display:grid; grid-template-columns: 1fr; gap:18px;}
-    @media(min-width:900px){ .grid{ grid-template-columns: 1fr 350px; } }
-    .card{background:var(--card); padding:18px; border-radius:8px; box-shadow:0 6px 18px rgba(15,15,15,0.04);}
-    .section-title{font-weight:600; color:var(--accent); margin-bottom:8px;}
-    .problem{display:flex; gap:12px; margin-bottom:14px;}
-    .problem .dot{width:10px;height:10px;border-radius:50%; background:var(--accent); margin-top:6px;}
-    .solutions ul{margin:8px 0 0 18px;}
-    .img-placeholder{width:100%;height:160px;border-radius:6px;background:linear-gradient(90deg,#eee,#f7f7f7);display:flex;align-items:center;justify-content:center;color:#aaa;font-size:15px;margin-bottom:10px;border:1px dashed #e0e0e0;}
-    footer{margin-top:16px; color:var(--muted); font-size:13px; text-align:center;}
-    .meta{font-size:13px;color:var(--muted); margin-top:6px;}
-    .kpi{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px;}
-    .kpi div{background:#f3f7f4;padding:8px 10px;border-radius:6px; font-weight:600; color:#2f6b5a;}
-    .btn{display:inline-block;background:var(--accent); color:#fff;padding:10px 14px;border-radius:6px;text-decoration:none;margin-top:6px;}
-    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    @media(max-width:520px){ .two-col{grid-template-columns:1fr} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Centro de Maringá: Desafios Urbanos e Soluções Sustentáveis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Integrado para Visualização Imediata */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #0056b3;
+            padding-bottom: 20px;
+        }
+        header h1 {
+            color: #0056b3;
+            font-size: 2.2em;
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 1em;
+            color: #555;
+        }
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid;
+        }
+        .problems .section-title {
+            color: #d9534f;
+            border-left-color: #d9534f;
+        }
+        .solutions .section-title {
+            color: #5cb85c;
+            border-left-color: #5cb85c;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid;
+        }
+        .problems .card { border-top-color: #d9534f; }
+        .solutions .card { border-top-color: #5cb85c; }
+        .card h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3em;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            color: #333;
+        }
+        .card .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .problems .icon { color: #d9534f; }
+        .solutions .icon { color: #5cb85c; }
+        .card strong {
+            font-weight: 700;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Problemas e Soluções — Novo Centro de Maringá (Glebas A, B e C)</h1>
-      <p>A região em estudo integra a Zona Especial de Interesse Urbanístico delimitada por Av. São Paulo, Av. Tamandaré, Av. Paraná e Av. João Paulino Filho — usos residenciais e comércio/serviços. Esta página resume desafios urbanos e propostas de intervenção.</p>
-    </header>
 
-    <div class="grid">
-      <!-- main column -->
-      <main class="card">
-        <section>
-          <h2 class="section-title">Diagnóstico resumido</h2>
+    <div class="container">
+        <header>
+            <h1>Urbanização e Sustentabilidade no Novo Centro de Maringá, PR</h1>
+            <p>Análise de Desafios Ambientais e Propostas para um Crescimento Equilibrado (Glebas A, B e C)</p>
+        </header>
 
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Ilhas de calor</strong>
-              <p class="meta">Superfícies impermeáveis, pouca arborização e verticalização aumentam temperaturas locais.</p>
+        <section class="problems">
+            <h2 class="section-title">🛑 Principais Problemas da Verticalização</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3><span class="icon">🌡️</span> 1. Ilhas de Calor Urbanas (ICUs)</h3>
+                    <p>A intensa <strong>verticalização</strong> e a alta taxa de <strong>impermeabilização</strong> elevam a temperatura do ar na região, retendo calor e diminuindo o conforto térmico.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="icon">🏢</span> 2. Verticalização e Vento</h3>
+                    <p>A densidade de edifícios cria <strong>"cânions urbanos"</strong>, que modificam a circulação natural do vento, prejudicando a dispersão de poluentes e a ventilação.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="icon">🌧️</span> 3. Drenagem Urbana (Escoamento)</h3>
+                    <p>A <strong>impermeabilização</strong> do solo impede a <strong>percolação</strong> da água, sobrecarregando a rede de drenagem e aumentando o risco de inundações rápidas no centro.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="icon">💨</span> 4. Poluição do Ar e Ruído</h3>
+                    <p>O adensamento e a prioridade ao transporte individual (carros) aumentam a emissão de gases poluentes e a **poluição sonora** nas vias centrais.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="icon">🌳</span> 5. Escassez de Vegetação</h3>
+                    <p>A substituição de áreas verdes por concreto e pavimentos intensifica o problema das ICUs e reduz a capacidade de absorção de água da chuva.</p>
+                </div>
+
             </div>
-          </div>
-
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Percolação reduzida e impermeabilização</strong>
-              <p class="meta">Substituição de áreas permeáveis por pavimento reduz recarga do lençol e aumenta escoamento.</p>
-            </div>
-          </div>
-
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Drenagem insuficiente / alagamentos</strong>
-              <p class="meta">Infraestrutura muitas vezes subdimensionada e entupimento por resíduos.</p>
-            </div>
-          </div>
-
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Redução de vegetação e perda de serviços ecossistêmicos</strong>
-              <p class="meta">Menos sombra, menos filtração de poluentes e menor qualidade de vida.</p>
-            </div>
-          </div>
-
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Contaminação do ar e passageiros por tráfego</strong>
-              <p class="meta">Elevado tráfego e veículos concentrados em eixos geram poluentes locais.</p>
-            </div>
-          </div>
-
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Passivos ambientais / contaminação do solo</strong>
-              <p class="meta">Legado ferroviário pode trazer óleos e contaminantes associáveis a uso anterior.</p>
-            </div>
-          </div>
-
-          <div class="problem">
-            <div class="dot"></div>
-            <div>
-              <strong>Impactos socioespaciais (gentrificação)</strong>
-              <p class="meta">Valorização e deslocamento de população vulnerável.</p>
-            </div>
-          </div>
         </section>
 
-        <section style="margin-top:14px;">
-          <h2 class="section-title">Soluções práticas recomendadas</h2>
+        <section class="solutions">
+            <h2 class="section-title">✅ Soluções para a Sustentabilidade Urbana</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3><span class="icon">🌿</span> 1. Infraestrutura Verde (IVU)</h3>
+                    <p>Implementar <strong>Telhados Verdes</strong> e <strong>Jardins Verticais</strong> nos novos e existentes edifícios para isolamento térmico e redução da área de absorção de calor.</p>
+                </div>
 
-          <div class="two-col">
-            <div>
-              <h3 style="margin:6px 0 6px;">Natureza & Água</h3>
-              <ul>
-                <li>Proteção e ampliação da arborização com espécies nativas.</li>
-                <li>Telhados e fachadas verdes em empreendimentos públicos/privados.</li>
-                <li>Biorretenção, bioswales e jardins de infiltração em vias e praças.</li>
-                <li>Pavimentos permeáveis em calçadas e estacionamentos.</li>
-              </ul>
-            </div>
-            <div>
-              <h3 style="margin:6px 0 6px;">Mobilidade & Emissões</h3>
-              <ul>
-                <li>Priorização do transporte coletivo e modos ativos (ciclovias, calçadas) nas avenidas perimetrais.</li>
-                <li>Política de áreas de baixa emissão e restrição de pesados em horários críticos.</li>
-                <li>Reorganização do tráfego local para reduzir atravessamento e melhorar fluxo.</li>
-              </ul>
-            </div>
-          </div>
+                <div class="card">
+                    <h3><span class="icon">💧</span> 2. Pavimentos Permeáveis</h3>
+                    <p>Utilizar <strong>pavimentos permeáveis</strong> e criar <strong>Jardins de Chuva</strong> em espaços públicos para aumentar a infiltração de água e aliviar a sobrecarga da drenagem.</p>
+                </div>
 
-          <div class="two-col" style="margin-top:12px;">
-            <div>
-              <h3 style="margin:6px 0 6px;">Solo & Remediação</h3>
-              <ul>
-                <li>Levantamento de passivos e análises de solo/água nas Glebas A/B/C.</li>
-                <li>Remediação (bioremediação, escavação controlada) antes de novos projetos.</li>
-                <li>Certificação ambiental prévia para vendas e obras.</li>
-              </ul>
-            </div>
-            <div>
-              <h3 style="margin:6px 0 6px;">Políticas & Inclusão</h3>
-              <ul>
-                <li>Instrumentos de zoneamento que exijam áreas permeáveis e moradia social.</li>
-                <li>Projetos participativos com comunidade local para definir usos.</li>
-                <li>Incentivos econômicos (IPTU verde, financiamento) para medidas sustentáveis.</li>
-              </ul>
-            </div>
-          </div>
+                <div class="card">
+                    <h3><span class="icon">📐</span> 3. Planejamento do Microclima</h3>
+                    <p>Revisar regulamentos urbanísticos (Plano Diretor) para garantir recuos e espaçamentos adequados que promovam a **circulação de vento** entre as torres.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="icon">🚶‍♀️</span> 4. Mobilidade Sustentável</h3>
+                    <p>Priorizar o transporte ativo (pedestres/ciclistas) no **Eixo Monumental** e investir em transporte público eficiente para diminuir o uso de automóveis.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="icon">⚪</span> 5. Materiais de Alto Albedo</h3>
+                    <p>Incentivar o uso de materiais de cores claras (<strong>alto albedo</strong>) em fachadas e pavimentos para refletir a radiação solar e reduzir a temperatura superficial.</p>
+                </div>
 
-          <p style="margin-top:12px;">As ações devem ser combinadas: intervenções físicas (infraestrutura verde e drenagem), regulação (zoneamento, exigências técnicas) e governança (monitoramento, manutenção e participação). </p>
+            </div>
         </section>
 
-        <section style="margin-top:12px;">
-          <h2 class="section-title">Plano rápido de implementação (prioridades)</h2>
-          <ol>
-            <li><strong>Diagnóstico</strong> (0–6 meses): mapeamento de pontos críticos, inventário arbóreo e testes de solo.</li>
-            <li><strong>Ações rápidas</strong> (6–18 meses): limpeza de rede pluvial, plantios estratégicos e cisternas públicas.</li>
-            <li><strong>Projetos estratégicos</strong> (1–3 anos): bioswales, telhados verdes, calçadas permeáveis.</li>
-            <li><strong>Intervenções</strong> (3–6 anos): remediação de solo, grandes parques e reordenação viária.</li>
-            <li><strong>Monitoramento</strong> contínuo e ajuste de políticas.</li>
-          </ol>
-        </section>
-
-        <section style="margin-top:12px;">
-          <h2 class="section-title">Indicadores sugeridos</h2>
-          <div class="kpi">
-            <div>Cobertura arbórea (%)</div>
-            <div>% área permeável</div>
-            <div>Eventos de alagamento/ano</div>
-            <div>PM2.5 médio anual</div>
-          </div>
-        </section>
-
-        <section style="margin-top:12px;">
-          <h2 class="section-title">Recursos e parcerias possíveis</h2>
-          <p class="meta">Prefeitura (planejamento/obras), universidades (UEM — estudos e monitoramento), empresas privadas (projetos e incentivos), sociedade civil (participação). Financiamentos via bancos de desenvolvimento e editais de clima/urbanismo.</p>
-        </section>
-      </main>
-
-      <!-- right column -->
-      <aside class="card">
-        <h3 class="section-title">Imagens / Materiais</h3>
-        <div class="img-placeholder">Imagem histórica: Estação / ferrovia (inserir arquivo)</div>
-        <div class="img-placeholder">Imagem atual: Av. São Paulo / verticalização</div>
-        <div class="img-placeholder">Mapa das Glebas A, B e C (inserir)</div>
-
-        <h3 class="section-title" style="margin-top:12px;">Documentos</h3>
-        <p class="meta">Linha do tempo histórica e material de apoio:</p>
-        <p><a href="file:///mnt/data/2.docx" class="btn" download>Baixar documento (2.docx)</a></p>
-
-        <h3 class="section-title" style="margin-top:12px;">Contato / Ação</h3>
-        <p class="meta">Se desejar, posso:</p>
-        <ul>
-          <li>Gerar um PDF técnico com plano de ação.</li>
-          <li>Montar apresentação para banca / defesa.</li>
-          <li>Produzir mapas e infográficos com dados específicos.</li>
-        </ul>
-      </aside>
+        <footer>
+            <p>Trabalho de Mestrado em [Sua Área de Estudo] | [Seu Nome] | [Sua Instituição]</p>
+            <p>Local de Estudo: Zona Especial de Interesse Urbanístico (Av. São Paulo, Av. Tamandaré, Av. Paraná e Av. João Paulino Filho)</p>
+        </footer>
     </div>
 
-    <footer>
-      <div>Resumo elaborado com base em diagnóstico técnico geral aplicado ao contexto do Novo Centro de Maringá. Ferramenta: ChatGPT.</div>
-      <div style="margin-top:6px;"><small>Observação: atualizações locais e levantamentos de campo são recomendados para calibrar intervenções.</small></div>
-    </footer>
-
-  </div>
 </body>
 </html>
