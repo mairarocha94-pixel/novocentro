@@ -30,12 +30,12 @@
             background-color: #fff;
             padding: 40px 60px;
             border-radius: 6px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
         }
         header {
             text-align: center;
             margin-bottom: 50px;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 20px;
         }
         header h1 {
@@ -54,13 +54,11 @@
             font-size: 2em;
             font-weight: 700;
             margin-top: 50px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             padding-bottom: 10px;
             border-bottom: 3px solid;
             letter-spacing: 0.5px;
             text-align: center;
-        }
-        .problems-solutions .section-title {
             color: var(--primary-color);
             border-bottom-color: var(--primary-color);
         }
@@ -76,8 +74,8 @@
             grid-template-columns: 1fr; /* Padrão: empilhado em telas pequenas */
             gap: 30px;
             padding-bottom: 40px;
-            border-bottom: 1px solid #ddd;
-            align-items: stretch; /* Garante que ambos os lados tenham a mesma altura visualmente */
+            border-bottom: 1px dashed #ccc; /* Linha de divisão visual */
+            align-items: stretch;
         }
 
         @media (min-width: 900px) {
@@ -88,48 +86,52 @@
 
         .card-problem, .card-solution {
             padding: 25px;
-            border-radius: 4px;
-            border-left: 5px solid;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            border-left: 8px solid; /* Borda mais grossa para cor de destaque */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Empurra o footer para baixo */
+            justify-content: space-between;
         }
 
         .card-problem {
             border-left-color: var(--accent-color-problem);
-            background-color: #fef8f8; /* Subtom de problema */
+            background-color: #fffafb; /* Fundo claro com subtom de problema */
         }
 
         .card-solution {
             border-left-color: var(--accent-color-solution);
-            background-color: #f8fef8; /* Subtom de solução */
+            background-color: #fbfff9; /* Fundo claro com subtom de solução */
         }
 
         .card h3 {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.25em;
+            font-size: 1.35em;
             font-weight: 700;
             margin-top: 0;
             padding-bottom: 5px;
-            border-bottom: 1px solid #f0f0f0;
         }
         .card-problem h3 { color: var(--accent-color-problem); }
         .card-solution h3 { color: var(--accent-color-solution); }
-
+        
+        /* Espaço para Imagens Ilustrativas */
         .image-illustration {
-            margin-top: 15px;
-            margin-bottom: 5px;
-            padding: 10px;
-            border: 1px dashed #ccc;
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px dashed var(--primary-color);
             text-align: center;
-            font-size: 0.85em;
-            color: #666;
+            font-size: 0.9em;
+            color: #555;
             background-color: #fcfcfc;
-            flex-grow: 1; /* Permite que o placeholder ocupe espaço */
+            min-height: 100px; /* Garante um respiro visual */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
         }
         
-        /* Lista de Soluções (para a parte de Mobilidade) */
+        /* Lista de Soluções Detalhadas (para Mobilidade) */
         .detail-list {
             list-style: none;
             padding-left: 0;
@@ -142,10 +144,9 @@
             font-size: 0.95em;
         }
         .detail-list li::before {
-            content: "➤";
+            content: "✅";
             position: absolute;
             left: 0;
-            color: var(--accent-color-solution);
             font-weight: bold;
         }
 
@@ -163,106 +164,115 @@
 
     <div class="container">
         <header>
-            <h1>Urbanização Sustentável no Novo Centro de Maringá</h1>
+            <h1>Urbanização Sustentável no Novo Centro de Maringá 🌳</h1>
             <p>Análise de Impactos Socioambientais e Propostas de Intervenção Estratégica</p>
         </header>
 
         <section class="problems-solutions">
-            <h2 class="section-title">Comparativo: Problemas Urbanos vs. Soluções Sustentáveis</h2>
+            <h2 class="section-title">Diagnóstico e Soluções Estratégicas: Uma Visão Comparativa</h2>
             <div class="comparison-grid">
 
                 <div class="comparison-item">
                     <div class="card card-problem">
                         <div>
-                            <h3>Problema: Ilhas de Calor e Pouca Arborização</h3>
-                            <p>Superfícies impermeáveis, a intensa verticalização e a ausência de vegetação amplificam a retenção de calor, elevando as temperaturas locais e gerando microclimas hostis.</p>
+                            <h3>Diagnóstico: Ilhas de Calor Urbanas (ICUs)</h3>
+                            <p>Superfícies impermeáveis, a intensa **verticalização** e a pouca vegetação amplificam a retenção de calor, elevando as temperaturas locais e degradando o conforto térmico.</p>
                         </div>
                         <div class="image-illustration">
-                            
-                        </div>
+                                                    </div>
                     </div>
                     <div class="card card-solution">
                         <div>
-                            <h3>Solução: Infraestrutura Verde e Alto Albedo</h3>
-                            <p>Implementação de **Telhados Verdes** e **Jardins Verticais**. Incentivo ao uso de **materiais de alto albedo** (cores claras) em coberturas e pavimentos para refletir a radiação solar e combater as ICUs.</p>
+                            <h3>Estratégia: Infraestrutura Verde e Alto Albedo</h3>
+                            <p>Implementação de **Telhados Verdes** e **Jardins Verticais** nos edifícios. Incentivo ao uso de **materiais de alto albedo** (cores claras) em coberturas e pavimentos para refletir a radiação solar.</p>
                         </div>
                         <div class="image-illustration">
-                            
-                        </div>
+                                                    </div>
                     </div>
                 </div>
 
                 <div class="comparison-item">
                     <div class="card card-problem">
                         <div>
-                            <h3>Problema: Percolação Reduzida e Drenagem Insuficiente</h3>
-                            <p>A substituição de áreas permeáveis por pavimento (100% impermeável) reduz drasticamente a **recarga do lençol freático** e sobrecarrega a infraestrutura de drenagem, causando alagamentos.</p>
+                            <h3>Diagnóstico: Percolação Reduzida e Drenagem Insuficiente</h3>
+                            <p>A substituição total de áreas permeáveis por pavimento impede a **recarga do lençol freático**. A infraestrutura de drenagem, muitas vezes **subdimensionada**, é sobrecarregada, causando alagamentos.</p>
                         </div>
                         <div class="image-illustration">
-                            
-                        </div>
+                                                    </div>
                     </div>
                     <div class="card card-solution">
                         <div>
-                            <h3>Solução: Gestão de Águas Pluviais e Pavimentos Permeáveis</h3>
+                            <h3>Estratégia: Gestão de Águas Pluviais na Fonte</h3>
                             <p>Uso obrigatório de **pavimentos permeáveis** e criação de **Jardins de Chuva** (bioswales) em áreas públicas e privadas para aumentar a infiltração da água no solo (percolação).</p>
                         </div>
                         <div class="image-illustration">
-                            
-
-[Image of Rain Garden (bioswale) in urban environment]
-
-                        </div>
+                                                    </div>
                     </div>
                 </div>
 
                 <div class="comparison-item">
                     <div class="card card-problem">
                         <div>
-                            <h3>Problema: Contaminação do Solo (Passivos Ambientais) e Tráfego</h3>
-                            <p>O legado do uso ferroviário (pátio de manobras) pode ter deixado **contaminantes** (óleos e combustíveis) no subsolo. O tráfego intenso gera **poluentes locais** e poluição sonora.</p>
+                            <h3>Diagnóstico: Contaminação do Solo (Passivos Ambientais) e Redução de Vegetação</h3>
+                            <p>O legado do uso ferroviário pode ter deixado **contaminantes** (passivos ambientais) no subsolo. A **perda de áreas verdes** reduz serviços ecossistêmicos essenciais como filtração e sombra.</p>
                         </div>
                         <div class="image-illustration">
-                            
-                        </div>
+                                                    </div>
                     </div>
                     <div class="card card-solution">
                         <div>
-                            <h3>Solução: Remediação e Mobilidade Sustentável</h3>
-                            <p>Execução de projetos de **remediação do solo** nas Glebas. Implementação de medidas para controle de tráfego e qualidade do ar, focando na mobilidade ativa e coletiva.</p>
-                            <ul class="detail-list">
-                                <li>**Política de áreas de baixa emissão** e restrição de veículos pesados.</li>
-                                <li>**Reorganização do tráfego** para reduzir atravessamento desnecessário.</li>
-                            </ul>
+                            <h3>Estratégia: Remediação e Reintrodução de Espécies</h3>
+                            <p>Execução de projetos de **remediação do solo** nas Glebas para neutralizar passivos ambientais. **Reintrodução de vegetação** nativa e planejamento de sombreamento em espaços públicos.</p>
                         </div>
                         <div class="image-illustration">
-                            
-                        </div>
+                                                    </div>
                     </div>
                 </div>
                 
                 <div class="comparison-item">
                     <div class="card card-problem">
                         <div>
-                            <h3>Problema: Dependência Veicular e Impactos Socioespaciais</h3>
-                            <p>A prioridade histórica ao automóvel satura as vias perimetrais. A intensa valorização imobiliária do Novo Centro (gentrificação) causa o **deslocamento de população vulnerável** e pequenos comércios.</p>
+                            <h3>Diagnóstico: Contaminação do Ar e Tráfego Concentrado</h3>
+                            <p>O elevado tráfego de veículos (prioridade ao transporte individual) gera **poluentes locais** (gases e partículas) e **poluição sonora**, afetando a qualidade do ar e o bem-estar dos pedestres.</p>
                         </div>
                         <div class="image-illustration">
-                            
-                        </div>
+                                                    </div>
                     </div>
                     <div class="card card-solution">
                         <div>
-                            <h3>Solução: Priorização do Coletivo/Ativo e Mitigação Social</h3>
-                            <p>Promover uma cidade mais compacta e justa. Uso de ferramentas urbanísticas para equilíbrio social e melhoria da infraestrutura de transporte.</p>
+                            <h3>Estratégia: Mobilidade Sustentável e Fluxo Urbano</h3>
+                            <p>Priorizar o transporte coletivo e modos ativos. O planejamento deve focar na redução da emissão de poluentes e na fluidez do tráfego:</p>
                             <ul class="detail-list">
-                                <li>**Priorização do transporte coletivo e modos ativos** (**ciclovias** e **calçadas**) nas avenidas perimetrais.</li>
-                                <li>Criação de **Zonas Especiais de Interesse Social (ZEIS)** para garantir moradias populares e combater a gentrificação.</li>
+                                <li>**Priorização do transporte coletivo** e modos ativos (**ciclovias** e **calçadas**) nas avenidas perimetrais.</li>
+                                <li>**Política de áreas de baixa emissão** (restrição de pesados/poluentes em horários críticos).</li>
+                                <li>**Reorganização do tráfego local** para reduzir o atravessamento e melhorar o fluxo.</li>
                             </ul>
                         </div>
                         <div class="image-illustration">
-                            
+                                                    </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-item">
+                    <div class="card card-problem">
+                        <div>
+                            <h3>Diagnóstico: Impactos Socioespaciais (Gentrificação)</h3>
+                            <p>A intensa valorização imobiliária do Novo Centro (verticalização e investimento) causa o **deslocamento da população vulnerável** e de pequenos comércios, fragmentando o tecido social local.</p>
                         </div>
+                        <div class="image-illustration">
+                                                    </div>
+                    </div>
+                    <div class="card card-solution">
+                        <div>
+                            <h3>Estratégia: Mitigação da Gentrificação e Função Social</h3>
+                            <p>Implementar políticas urbanas que promovam a **função social da propriedade**, garantindo a diversidade de usos e rendas na área central:</p>
+                            <ul class="detail-list">
+                                <li>Criação de **Zonas Especiais de Interesse Social (ZEIS)** na área para garantir moradias populares.</li>
+                                <li>Incentivos fiscais para manutenção de comércios tradicionais.</li>
+                            </ul>
+                        </div>
+                        <div class="image-illustration">
+                                                    </div>
                     </div>
                 </div>
 
@@ -270,7 +280,7 @@
         </section>
 
         <footer>
-            <p><strong>Região em Estudo:</strong> Glebas A, B e C, delimitada pela Av. São Paulo, Av. Tamandaré, Av. Paraná e Av. João Paulino Filho (Zona Especial de Interesse Urbanístico).</p>
+            <p><strong>Região em Estudo:</strong> Glebas A, B e C, delimitada pela Av. São Paulo, Av. Tamandaré, Av. Paraná e Av. João Paulino Filho (ZEIS).</p>
             <p>Dissertação de Mestrado: [Seu Nome] | [Sua Instituição Acadêmica]</p>
         </footer>
     </div>
