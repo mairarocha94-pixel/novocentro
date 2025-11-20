@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição Especial: Urbanização Sustentável em Maringá</title>
+    <title>Edição Interativa: Urbanização Sustentável em Maringá</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilização "Revista/Jornal" */
@@ -12,7 +12,7 @@
             --secondary-color: #333;
             --accent-color-problem: #cc3333; /* Vermelho de alerta */
             --accent-color-solution: #007700; /* Verde profissional */
-            --background-color: #e8f5e9; /* Fundo Verde Claro Suave (Cores de Maringá) */
+            --background-color: #e8f5e9; /* Fundo VERDE CLARO SUAVE */
             --paper-background: #fff;
             --separator-color: #ccc;
         }
@@ -104,7 +104,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            /* Transições para o efeito interativo */
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
         }
+        /* Efeito de Clique/Hover */
+        .card-problem:hover, .card-solution:hover {
+            transform: translateY(-5px); /* Levanta o cartão */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra intensa */
+            background-color: #fff; /* Fundo mais claro ao interagir */
+        }
+        
         .card-problem { border-top: 5px solid var(--accent-color-problem); }
         .card-solution { border-top: 5px solid var(--accent-color-solution); }
 
@@ -125,7 +135,6 @@
         /* Espaço de Imagem - Destaque Visual */
         .image-illustration {
             margin-top: 20px;
-            padding: 15px;
             border: 1px solid var(--primary-color);
             text-align: center;
             font-size: 0.8em;
@@ -138,6 +147,20 @@
             font-style: italic;
             flex-direction: column;
         }
+
+        /* Tornar o placeholder da imagem linkável visualmente */
+        .image-illustration a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .image-illustration a:hover {
+            color: var(--accent-color-solution);
+        }
+        
         .image-illustration p {
             margin: 5px 0 0 0;
             font-size: 0.85em;
@@ -197,8 +220,10 @@
                             <p>Superfícies impermeáveis, a intensa **verticalização** e a pouca vegetação amplificam a retenção de calor, elevando as temperaturas locais e degradando o conforto térmico.</p>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Mapa Térmico Urbano]</strong>
-                            <p>Visualização do efeito Ilha de Calor na área central adensada.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Mapa Térmico Urbano]</strong>
+                                <p>Visualização do efeito Ilha de Calor na área central adensada.</p>
+                            </a>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -207,8 +232,10 @@
                             <p>Implementação de **Telhados Verdes** e **Jardins Verticais** nos edifícios. Uso de **materiais de alto albedo** (cores claras) em coberturas e pavimentos para refletir a radiação solar e reduzir a temperatura superficial.</p>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Edifício com Telhado Verde]</strong>
-                            <p>Exemplo de solução de alto albedo e IVU.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Edifício com Telhado Verde]</strong>
+                                <p>Exemplo de solução de alto albedo e IVU.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -220,8 +247,10 @@
                             <p>A substituição de áreas permeáveis por pavimento impede a **recarga do lençol freático** e sobrecarrega a infraestrutura de drenagem, muitas vezes **subdimensionada**, resultando em alagamentos frequentes.</p>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Rua com Acúmulo de Água]</strong>
-                            <p>Vista aérea do Viaduto do Café em 1970 (Image 6) ou alagamento na Av. Horácio Raccanello.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Rua com Acúmulo de Água]</strong>
+                                <p>Vista aérea do viaduto do Café em 1970 (Image 6) ou alagamento na Av. Horácio Raccanello.</p>
+                            </a>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -230,8 +259,10 @@
                             <p>Uso obrigatório de **pavimentos permeáveis** e criação de **Jardins de Chuva** (bioswales) em áreas públicas. Essa medida aumenta a infiltração da água no solo (percolação) e alivia o escoamento superficial.</p>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Jardim de Chuva]</strong>
-                            <p>Detalhamento de infiltração em Pavimento Permeável.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Jardim de Chuva]</strong>
+                                <p>Detalhamento de infiltração em Pavimento Permeável.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -243,8 +274,10 @@
                             <p>O legado do uso ferroviário pode ter deixado **contaminantes** (passivos ambientais) no subsolo. Além disso, o elevado tráfego de veículos concentra **poluentes locais** e afeta a qualidade do ar.</p>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Histórica: Av. Horácio Raccanello Filho, 2001 (Image 17)]</strong>
-                            <p>Antiga área ferroviária antes da edificação e do tráfego intenso.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Av. Horácio Raccanello Filho, 2001 (Image 17)]</strong>
+                                <p>Antiga área ferroviária antes da edificação e do tráfego intenso.</p>
+                            </a>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -257,8 +290,10 @@
                             </ul>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Ciclovia e Faixa Exclusiva]</strong>
-                            <p>Exemplo de infraestrutura para modos ativos e transporte coletivo.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Ciclovia e Faixa Exclusiva]</strong>
+                                <p>Exemplo de infraestrutura para modos ativos e transporte coletivo.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -270,8 +305,10 @@
                             <p>A intensa valorização imobiliária da região causa o **deslocamento da população vulnerável** e de pequenos comércios, ameaçando a diversidade e o tecido social da região central.</p>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Contraste Verticalização x Moradia Simples]</strong>
-                            <p>Contraste entre grandes edifícios novos e moradias de baixo padrão.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Contraste Verticalização x Moradia Simples]</strong>
+                                <p>Contraste entre grandes edifícios novos e moradias de baixo padrão.</p>
+                            </a>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -284,8 +321,10 @@
                             </ul>
                         </div>
                         <div class="image-illustration">
-                            <strong>[Image Sugerida: Projeto de ZEIS]</strong>
-                            <p>Exemplo de moradia popular integrada ao Novo Centro.</p>
+                            <a href="#">
+                                <strong>[Clique para ver: Projeto de ZEIS]</strong>
+                                <p>Exemplo de moradia popular integrada ao Novo Centro.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
