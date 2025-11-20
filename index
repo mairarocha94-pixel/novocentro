@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição Especial: Urbanização Sustentável em Maringá</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilização "Revista/Jornal" */
+        :root {
+            --primary-color: #1a1a1a; /* Preto forte para manchetes */
+            --secondary-color: #333;
+            --accent-color-problem: #cc3333; /* Vermelho de alerta */
+            --accent-color-solution: #007700; /* Verde profissional */
+            --background-color: #fcfcfc; /* Fundo de "papel" */
+            --paper-background: #fff;
+            --separator-color: #ccc;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--paper-background);
+            padding: 40px 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* Sombra suave de jornal */
+            border-top: 5px solid var(--primary-color);
+        }
+
+        /* Cabeçalho - Manchete */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 3em;
+            font-weight: 900; /* Extra bold */
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Títulos de Seção - Destaque */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            padding: 10px 0;
+            border-top: 3px solid var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            text-align: center;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        /* Layout de Artigo em Colunas */
+        .comparison-grid {
+            display: grid;
+            gap: 40px; 
+        }
+
+        .comparison-item {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--separator-color); /* Linha fina de artigo */
+            align-items: stretch;
+        }
+
+        @media (min-width: 900px) {
+            .comparison-item {
+                grid-template-columns: 1fr 1fr; /* Duas colunas em telas grandes */
+                gap: 50px;
+            }
+        }
+
+        /* Cartões de Problema e Solução */
+        .card-problem, .card-solution {
+            padding: 20px;
+            border-radius: 3px;
+            border: 1px solid #e0e0e0;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-problem { border-top: 5px solid var(--accent-color-problem); }
+        .card-solution { border-top: 5px solid var(--accent-color-solution); }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .card-problem h3 { color: var(--accent-color-problem); }
+        .card-solution h3 { color: var(--accent-color-solution); }
+        
+        .card p { font-size: 0.95em; }
+
+        /* Espaço de Imagem - Destaque Visual */
+        .image-illustration {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid var(--primary-color);
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
+            background-color: #f0f0f0;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+        }
+        
+        /* Lista de Soluções Detalhadas */
+        .detail-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .detail-list li {
+            position: relative;
+            margin-bottom: 8px;
+            padding-left: 25px;
+        }
+        .detail-list li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color-solution);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 25px;
+            border-top: 1px solid var(--primary-color);
+            font-size: 0.85em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <p>EDIÇÃO ESPECIAL: SUSTENTABILIDADE URBANA</p>
+            <h1>O Desafio da Reestruturação no Novo Centro de Maringá</h1>
+            <p>Análise de Impactos Socioambientais e o Futuro Planejado da Zona Especial de Interesse Urbanístico (ZEIS)</p>
+        </header>
+
+        <section class="problems-solutions">
+            <h2 class="section-title">Em Pauta: Problemas Críticos e Estratégias de Mitigação</h2>
+            <div class="comparison-grid">
+
+                <div class="comparison-item">
+                    <div class="card card-problem">
+                        <div>
+                            <h3>Alerta: Ilhas de Calor e Verticalização Desordenada</h3>
+                            <p>Superfícies impermeáveis, a intensa **verticalização** e a pouca vegetação amplificam a retenção de calor, elevando as temperaturas locais e degradando o conforto térmico.</p>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                    <div class="card card-solution">
+                        <div>
+                            <h3>Solução Verde: Alto Albedo e Infraestrutura Ecológica</h3>
+                            <p>Implementação de **Telhados Verdes** e **Jardins Verticais** nos edifícios. Uso de **materiais de alto albedo** (cores claras) em coberturas e pavimentos para refletir a radiação solar e reduzir a temperatura superficial.</p>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="card card-problem">
+                        <div>
+                            <h3>Crise Hídrica: Percolação Zero e Alagamentos</h3>
+                            <p>A substituição de áreas permeáveis por pavimento impede a **recarga do lençol freático** e sobrecarrega a infraestrutura de drenagem, muitas vezes **subdimensionada**, resultando em alagamentos frequentes.</p>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                    <div class="card card-solution">
+                        <div>
+                            <h3>Intervenção: Pavimentos Permeáveis e Jardins de Chuva</h3>
+                            <p>Uso obrigatório de **pavimentos permeáveis** e criação de **Jardins de Chuva** (bioswales) em áreas públicas. Essa medida aumenta a infiltração da água no solo (percolação) e alivia o escoamento superficial.</p>
+                        </div>
+                        <div class="image-illustration">
+                            
+
+[Image of Rain Garden (bioswale) and permeable pavement]
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="card card-problem">
+                        <div>
+                            <h3>Foco Ambiental: Passivos de Contaminação e Poluição do Ar</h3>
+                            <p>O legado do uso ferroviário pode ter deixado **contaminantes** (passivos ambientais) no subsolo. Além disso, o elevado tráfego de veículos concentra **poluentes locais** e afeta a qualidade do ar.</p>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                    <div class="card card-solution">
+                        <div>
+                            <h3>Eixo da Mobilidade: Prioridade Coletiva e Baixa Emissão</h3>
+                            <p>Combinação de **remediação do solo** com estratégias de mobilidade focadas em modos ativos e coletivos para reduzir a poluição e melhorar o fluxo:</p>
+                            <ul class="detail-list">
+                                <li>**Priorização do transporte coletivo** e modos ativos (**ciclovias** e **calçadas**) nas avenidas perimetrais.</li>
+                                <li>**Política de áreas de baixa emissão** e restrição de veículos pesados em horários críticos.</li>
+                                <li>**Reorganização do tráfego local** para reduzir o atravessamento.</li>
+                            </ul>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-item">
+                    <div class="card card-problem">
+                        <div>
+                            <h3>Impacto Social: O Risco da Gentrificação</h3>
+                            <p>A intensa valorização imobiliária da região causa o **deslocamento da população vulnerável** e de pequenos comércios, ameaçando a diversidade e o tecido social da região central.</p>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                    <div class="card card-solution">
+                        <div>
+                            <h3>Governança: Função Social e ZEIS</h3>
+                            <p>Implementar políticas urbanas que promovam a **função social da propriedade**, garantindo a diversidade de usos e rendas na área central:</p>
+                            <ul class="detail-list">
+                                <li>Criação de **Zonas Especiais de Interesse Social (ZEIS)** para garantir a permanência de moradias populares.</li>
+                                <li>Incentivos fiscais para manutenção de comércios tradicionais.</li>
+                            </ul>
+                        </div>
+                        <div class="image-illustration">
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>Região em Estudo:</strong> Glebas A, B e C (Zona Especial de Interesse Urbanístico)</p>
+            <p>Publicado por: [Seu Nome] | [Sua Instituição Acadêmica]</p>
+        </footer>
+    </div>
+
+</body>
+</html>
