@@ -12,7 +12,7 @@
             --secondary-color: #333;
             --accent-color-problem: #cc3333; /* Vermelho de alerta */
             --accent-color-solution: #007700; /* Verde profissional */
-            --background-color: #fcfcfc; /* Fundo de "papel" */
+            --background-color: #e8f5e9; /* Fundo Verde Claro Suave (Cores de Maringá) */
             --paper-background: #fff;
             --separator-color: #ccc;
         }
@@ -32,7 +32,7 @@
             background-color: var(--paper-background);
             padding: 40px 60px;
             border-radius: 4px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* Sombra suave de jornal */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
             border-top: 5px solid var(--primary-color);
         }
 
@@ -47,7 +47,7 @@
             font-family: 'Playfair Display', serif;
             color: var(--primary-color);
             font-size: 3em;
-            font-weight: 900; /* Extra bold */
+            font-weight: 900;
             margin-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -84,13 +84,13 @@
             grid-template-columns: 1fr; 
             gap: 30px;
             padding-bottom: 40px;
-            border-bottom: 1px solid var(--separator-color); /* Linha fina de artigo */
+            border-bottom: 1px solid var(--separator-color);
             align-items: stretch;
         }
 
         @media (min-width: 900px) {
             .comparison-item {
-                grid-template-columns: 1fr 1fr; /* Duas colunas em telas grandes */
+                grid-template-columns: 1fr 1fr;
                 gap: 50px;
             }
         }
@@ -136,6 +136,15 @@
             align-items: center;
             justify-content: center;
             font-style: italic;
+            flex-direction: column;
+        }
+        .image-illustration p {
+            margin: 5px 0 0 0;
+            font-size: 0.85em;
+            color: #777;
+        }
+        .image-illustration strong {
+            color: var(--primary-color);
         }
         
         /* Lista de Soluções Detalhadas */
@@ -188,7 +197,8 @@
                             <p>Superfícies impermeáveis, a intensa **verticalização** e a pouca vegetação amplificam a retenção de calor, elevando as temperaturas locais e degradando o conforto térmico.</p>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Sugerida: Mapa Térmico Urbano]</strong>
+                            <p>Visualização do efeito Ilha de Calor na área central adensada.</p>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -197,7 +207,8 @@
                             <p>Implementação de **Telhados Verdes** e **Jardins Verticais** nos edifícios. Uso de **materiais de alto albedo** (cores claras) em coberturas e pavimentos para refletir a radiação solar e reduzir a temperatura superficial.</p>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Sugerida: Edifício com Telhado Verde]</strong>
+                            <p>Exemplo de solução de alto albedo e IVU.</p>
                         </div>
                     </div>
                 </div>
@@ -209,7 +220,8 @@
                             <p>A substituição de áreas permeáveis por pavimento impede a **recarga do lençol freático** e sobrecarrega a infraestrutura de drenagem, muitas vezes **subdimensionada**, resultando em alagamentos frequentes.</p>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Sugerida: Rua com Acúmulo de Água]</strong>
+                            <p>Vista aérea do Viaduto do Café em 1970 (Image 6) ou alagamento na Av. Horácio Raccanello.</p>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -218,10 +230,8 @@
                             <p>Uso obrigatório de **pavimentos permeáveis** e criação de **Jardins de Chuva** (bioswales) em áreas públicas. Essa medida aumenta a infiltração da água no solo (percolação) e alivia o escoamento superficial.</p>
                         </div>
                         <div class="image-illustration">
-                            
-
-[Image of Rain Garden (bioswale) and permeable pavement]
-
+                            <strong>[Image Sugerida: Jardim de Chuva]</strong>
+                            <p>Detalhamento de infiltração em Pavimento Permeável.</p>
                         </div>
                     </div>
                 </div>
@@ -233,7 +243,8 @@
                             <p>O legado do uso ferroviário pode ter deixado **contaminantes** (passivos ambientais) no subsolo. Além disso, o elevado tráfego de veículos concentra **poluentes locais** e afeta a qualidade do ar.</p>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Histórica: Av. Horácio Raccanello Filho, 2001 (Image 17)]</strong>
+                            <p>Antiga área ferroviária antes da edificação e do tráfego intenso.</p>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -243,11 +254,11 @@
                             <ul class="detail-list">
                                 <li>**Priorização do transporte coletivo** e modos ativos (**ciclovias** e **calçadas**) nas avenidas perimetrais.</li>
                                 <li>**Política de áreas de baixa emissão** e restrição de veículos pesados em horários críticos.</li>
-                                <li>**Reorganização do tráfego local** para reduzir o atravessamento.</li>
                             </ul>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Sugerida: Ciclovia e Faixa Exclusiva]</strong>
+                            <p>Exemplo de infraestrutura para modos ativos e transporte coletivo.</p>
                         </div>
                     </div>
                 </div>
@@ -259,7 +270,8 @@
                             <p>A intensa valorização imobiliária da região causa o **deslocamento da população vulnerável** e de pequenos comércios, ameaçando a diversidade e o tecido social da região central.</p>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Sugerida: Contraste Verticalização x Moradia Simples]</strong>
+                            <p>Contraste entre grandes edifícios novos e moradias de baixo padrão.</p>
                         </div>
                     </div>
                     <div class="card card-solution">
@@ -272,7 +284,8 @@
                             </ul>
                         </div>
                         <div class="image-illustration">
-                            
+                            <strong>[Image Sugerida: Projeto de ZEIS]</strong>
+                            <p>Exemplo de moradia popular integrada ao Novo Centro.</p>
                         </div>
                     </div>
                 </div>
